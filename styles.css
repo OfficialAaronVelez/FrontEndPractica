@@ -59,7 +59,6 @@ body {
     color: #c9d1d9;
     margin-left: 20px;
     margin-bottom: 0px;
-    white-space: normal ;
 }
 
 .cursor {
@@ -69,9 +68,7 @@ body {
     background: #00ff00;
     margin-left: 2px;
 }
-.typing {
-    display: inline-block;
-}
+
 .section-title {
     color: #f0883e;
     font-size: 18px;
@@ -168,6 +165,10 @@ body {
     body {
         padding: 10px;
     }
+
+    .section-title-big {
+        font-size: 20px;
+    }
     
     .terminal {
         margin: 10px 0;
@@ -182,7 +183,7 @@ body {
     }
     
     .section-title {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .terminal-title {
@@ -197,5 +198,8 @@ body {
     
     .project-description {
         font-size: 13px;
+    }
+    .command {
+        font-size: 14px;
     }
 }
