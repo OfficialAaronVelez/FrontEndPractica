@@ -19,6 +19,16 @@ body {
     max-width: 900px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
+.commandInput {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    height:25px;
+}
 .terminal-header {
     background: #21262d;
     padding: 10px 15px;

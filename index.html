@@ -144,10 +144,12 @@
                     <p>GitHub: <a href="https://github.com/officialaaronvelez" class="link" target="_blank">github.com/officialaaronvelez</a></p>
                     <p>LinkedIn: <a href="https://linkedin.com/in/aaronvelezcoronado" class="link" target="_blank">linkedin.com/in/aaronvelezcoronado</a></p>
                 </div>
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 20px; display: flex; align-items: center;">
                     <span class="prompt">$</span>
                    
-                    <span class="cursor"></span>
+                    <input type="text" class="commandInput" onkeydown="pressEnterAfterInput(event)" id="commandInput">
+                    
+                    
                 </div>
             </div>
         </div>
@@ -160,6 +162,39 @@
        function maximizeTerminalButton() {
         event.target.closest('.terminal').classList.remove('minimized');
        }
+
+       function pressEnterAfterInput(event) {
+        const commandInput = document.getElementById('commandInput');
+    if (event.key === 'Enter') {
+        if (commandInput.value.toLowerCase() === 'hello') {
+            const newTerminal = document.createElement('div');
+            newTerminal.classList.add('terminal');
+            newTerminal.innerHTML = 
+            `
+            <div class="terminal-header">
+                <div class="terminal-button close"></div>
+                <div class="terminal-button minimize" onclick="minimizeTerminalButton()"></div>
+                <div class="terminal-button maximize" onclick="maximizeTerminalButton()"></div>
+                <div class="terminal-title">terminal@portfolio:~</div>
+            </div>
+            <div class="terminal-body">
+                <div class="command-line">
+                    <span class="prompt">$</span>
+                    <span class="command">Console.log(message.secret)</span>
+                    </div>
+                    <div class="output">
+                        <div class="section-title">Secret Message</div>
+                        <p>Go Seahawks!</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            document.body.appendChild(newTerminal);
+        } else {
+            console.log(commandInput.value);
+        }
+    }
+}
     </script>
 </body>
 </html>
