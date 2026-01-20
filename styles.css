@@ -20,6 +20,20 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+.button {
+    margin-top: 10px;
+    background: #00ff00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+}
+.button:hover {
+    background: #00cc00;
+    color: #ffffff;
+}
 .commandInput {
     background: transparent;
     border: none;

@@ -175,7 +175,7 @@
                 <div class="terminal-button close"></div>
                 <div class="terminal-button minimize" onclick="minimizeTerminalButton()"></div>
                 <div class="terminal-button maximize" onclick="maximizeTerminalButton()"></div>
-                <div class="terminal-title">terminal@portfolio:~</div>
+                <div class="terminal-title">terminal@easteregg:~</div>
             </div>
             <div class="terminal-body">
                 <div class="command-line">
@@ -185,6 +185,7 @@
                     <div class="output">
                         <div class="section-title">Secret Message</div>
                         <p>Go Seahawks!</p>
+                        <button class="button" onclick="partyMode()">Party Mode</button>
                     </div>
                 </div>
             </div>
@@ -194,6 +195,18 @@
             console.log(commandInput.value);
         }
     }
+}
+function partyMode() {
+    const body = document.body;
+    body.style.backgroundColor = 'red';
+    body.style.color = 'green';
+    body.style.fontFamily = 'Comic Sans MS, cursive, sans-serif';
+    body.style.fontSize = '20px';
+    body.style.fontWeight = 'bold';
+    body.style.textAlign = 'center';
+    body.style.padding = '20px';
+    body.style.margin = '20px';
+    body.style.border = '1px solid green';
 }
     </script>
 </body>
