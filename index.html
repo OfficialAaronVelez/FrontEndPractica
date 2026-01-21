@@ -7,24 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="terminal"
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="terminal-button close"></div>
-
-                <div class="terminal-button minimize" onclick="minimizeTerminalButton()"></div>
-
-                <div class="terminal-button maximize" onclick="maximizeTerminalButton()"></div>
-                <div class="terminal-title">terminal@portfolio:~</div>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+            <div class="terminal-title">terminal@portfolio:~</div>
+        </div>
+        <div class="terminal-body">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">Console.log(AaronVelezCoronado.description)</span>
             </div>
-            <div class="terminal-body">
-                <div class="command-line">
-                    <span class="prompt">$</span>
-                    <span class="command">Console.log(AaronVelezCoronado.description)</span>
-                </div>
-                <div class="output">
-                    <div class="section-title-big">Aaron Velez Coronado | Full Stack Programmer</div>
-                </div>
+            <div class="output">
+                <div class="section-title-big">Aaron Velez Coronado | Full Stack Programmer</div>
+            </div>
         </div>
     </div>
     
@@ -32,8 +29,8 @@
     <div class="terminal">
         <div class="terminal-header">
             <div class="terminal-button close"></div>
-            <div class="terminal-button minimize" onclick="minimizeTerminalButton()"></div>
-            <div class="terminal-button maximize" onclick="maximizeTerminalButton()"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
            
             <div class="terminal-title">welcome.txt</div>
         </div>
@@ -124,12 +121,117 @@
         </div>
     </div>
 
+    <! ACTIVIDAD DE SHOPPING CART !>
     <div class="terminal">
         <div class="terminal-header">
             <div class="terminal-button close"></div>
-            <div class="terminal-button minimize" onclick="minimizeTerminalButton()"></div>
-            <div class="terminal-button maximize" onclick="maximizeTerminalButton()"></div>
-       
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+            <div class="terminal-title">email-shop/</div>
+        </div>
+        <div class="terminal-body">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">ls email-shop/</span>
+            </div>
+            <div class="output">
+                <div class="section-title">EMAIL SHOP - Add Emails to Send</div>
+                <div class="email-shop-container">
+                    <div class="email-item">
+                        <div class="email-item-title">Project Inquiry</div>
+                        <div class="email-item-desc">Ask about collaboration opportunities</div>
+                        <button class="add-to-cart-btn" data-title="Project Inquiry" data-description="Ask about collaboration opportunities">Add to Cart</button>
+                    </div>
+                    <div class="email-item">
+                        <div class="email-item-title">💼 Job Opportunity</div>
+                        <div class="email-item-desc">Discuss potential employment</div>
+                        <button class="add-to-cart-btn" data-title="Job Opportunity" data-description="Discuss potential employment">Add to Cart</button>
+                    </div>
+                    <div class="email-item">
+                        <div class="email-item-title">🤝 Networking</div>
+                        <div class="email-item-desc">Connect and build professional relationships</div>
+                        <button class="add-to-cart-btn" data-title="Networking" data-description="Connect and build professional relationships">Add to Cart</button>
+                    </div>
+                    <div class="email-item">
+                        <div class="email-item-title">💡 Feedback</div>
+                        <div class="email-item-desc">Share thoughts on my portfolio</div>
+                        <button class="add-to-cart-btn" data-title="Feedback" data-description="Share thoughts on my portfolio">Add to Cart</button>
+                    </div>
+                    <div class="email-item">
+                        <div class="email-item-title">❓ General Question</div>
+                        <div class="email-item-desc">Ask anything you'd like</div>
+                        <button class="add-to-cart-btn" data-title="General Question" data-description="Ask anything you'd like">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Terminal -->
+    <div class="terminal" id="cartTerminal">
+        <div class="terminal-header">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+            <div class="terminal-title">cart.json</div>
+        </div>
+        <div class="terminal-body">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">cat cart.json</span>
+            </div>
+            <div class="output">
+                <div class="section-title">SHOPPING CART <span id="cartCount">(0)</span></div>
+                <div id="cartItems">
+                    <p style="color: #8b949e;">Your cart is empty. Add emails from the shop above!</p>
+                </div>
+                <div id="checkoutSection" style="display: none; margin-top: 20px;">
+                    <button class="button" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout/Compose Terminal -->
+    <div class="terminal" id="checkoutTerminal" style="display: none;">
+        <div class="terminal-header">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+            <div class="terminal-title">compose-email.sh</div>
+        </div>
+        <div class="terminal-body">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">./compose-email.sh</span>
+            </div>
+            <div class="output">
+                <div class="section-title">COMPOSE EMAIL</div>
+                <form id="emailForm">
+                    <div style="margin-bottom: 15px;">
+                        <label style="color: #58a6ff; display: block; margin-bottom: 5px;">Your Email:</label>
+                        <input type="email" id="userEmail" class="email-input" placeholder="your.email@example.com" required>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="color: #58a6ff; display: block; margin-bottom: 5px;">Subject:</label>
+                        <input type="text" id="emailSubject" class="email-input" readonly>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="color: #58a6ff; display: block; margin-bottom: 5px;">Message:</label>
+                        <textarea id="emailMessage" class="email-textarea" rows="8" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="button">Send Email</button>
+                    <button type="button" class="button" id="cancelBtn" style="background: #30363d; margin-left: 10px;">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-button close"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
             <div class="terminal-title">contact.md</div>
         </div>
         <div class="terminal-body">
@@ -140,74 +242,198 @@
             <div class="output">
                 <div class="section-title">GET IN TOUCH</div>
                 <div class="contact-info">
-                    <p>Email: <a href="aaronvelezcoronado@gmail.com" class="link">aaronvelezcoronado@gmail.com</a></p>
+                    <p>Email: <a href="mailto:aaronvelezcoronado@gmail.com" class="link">aaronvelezcoronado@gmail.com</a></p>
                     <p>GitHub: <a href="https://github.com/officialaaronvelez" class="link" target="_blank">github.com/officialaaronvelez</a></p>
                     <p>LinkedIn: <a href="https://linkedin.com/in/aaronvelezcoronado" class="link" target="_blank">linkedin.com/in/aaronvelezcoronado</a></p>
                 </div>
                 <div style="margin-top: 20px; display: flex; align-items: center;">
                     <span class="prompt">$</span>
-                   
-                    <input type="text" class="commandInput" onkeydown="pressEnterAfterInput(event)" id="commandInput">
-                    
-                    
+                    <input type="text" class="commandInput" id="commandInput">
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-       function minimizeTerminalButton() {
-        event.target.closest('.terminal').classList.add('minimized');
-       }
-       function maximizeTerminalButton() {
-        event.target.closest('.terminal').classList.remove('minimized');
-       }
+        
+        let cart = [];
 
-       function pressEnterAfterInput(event) {
-        const commandInput = document.getElementById('commandInput');
-    if (event.key === 'Enter') {
-        if (commandInput.value.toLowerCase() === 'hello') {
-            const newTerminal = document.createElement('div');
-            newTerminal.classList.add('terminal');
-            newTerminal.innerHTML = 
-            `
-            <div class="terminal-header">
-                <div class="terminal-button close"></div>
-                <div class="terminal-button minimize" onclick="minimizeTerminalButton()"></div>
-                <div class="terminal-button maximize" onclick="maximizeTerminalButton()"></div>
-                <div class="terminal-title">terminal@easteregg:~</div>
-            </div>
-            <div class="terminal-body">
-                <div class="command-line">
-                    <span class="prompt">$</span>
-                    <span class="command">Console.log(message.secret)</span>
-                    </div>
-                    <div class="output">
-                        <div class="section-title">Secret Message</div>
-                        <p>Go Seahawks!</p>
-                        <button class="button" onclick="partyMode()">Party Mode</button>
-                    </div>
-                </div>
-            </div>
-            `;
-            document.body.appendChild(newTerminal);
-        } else {
-            console.log(commandInput.value);
+       
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('minimize')) {
+                    event.target.closest('.terminal').classList.add('minimized');
+                }
+                if (event.target.classList.contains('maximize')) {
+                    event.target.closest('.terminal').classList.remove('minimized');
+                }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('add-to-cart-btn')) {
+                    const title = event.target.getAttribute('data-title');
+                    const description = event.target.getAttribute('data-description');
+                    addToCart(title, description);
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-btn')) {
+                    const index = parseInt(event.target.getAttribute('data-index'));
+                    removeFromCart(index);
+                }
+            });
+
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener('click', checkout);
+            }
+
+          
+            const cancelBtn = document.getElementById('cancelBtn');
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', cancelCheckout);
+            }
+
+            
+            const emailForm = document.getElementById('emailForm');
+            if (emailForm) {
+                emailForm.addEventListener('submit', sendEmail);
+            }
+
+            
+            const commandInput = document.getElementById('commandInput');
+            if (commandInput) {
+                commandInput.addEventListener('keydown', pressEnterAfterInput);
+            }
+        });
+
+        function addToCart(title, description) {
+            cart.push({ title, description });
+            updateCartDisplay();
         }
-    }
-}
-function partyMode() {
-    const body = document.body;
-    body.style.backgroundColor = 'red';
-    body.style.color = 'green';
-    body.style.fontFamily = 'Comic Sans MS, cursive, sans-serif';
-    body.style.fontSize = '20px';
-    body.style.fontWeight = 'bold';
-    body.style.textAlign = 'center';
-    body.style.padding = '20px';
-    body.style.margin = '20px';
-    body.style.border = '1px solid green';
-}
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const checkoutSection = document.getElementById('checkoutSection');
+            
+            cartCount.textContent = `(${cart.length})`;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="color: #8b949e;">Your cart is empty. Add emails from the shop above!</p>';
+                checkoutSection.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map((item, index) => `
+                    <div class="cart-item">
+                        <div style="flex: 1;">
+                            <div style="color: #58a6ff; font-weight: bold;">${item.title}</div>
+                            <div style="color: #c9d1d9; font-size: 14px;">${item.description}</div>
+                        </div>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </div>
+                `).join('');
+                checkoutSection.style.display = 'block';
+            }
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            
+            const checkoutTerminal = document.getElementById('checkoutTerminal');
+            const emailSubject = document.getElementById('emailSubject');
+            
+           
+            const subjects = cart.map(item => item.title).join(', ');
+            emailSubject.value = subjects;
+            
+            checkoutTerminal.style.display = 'block';
+            checkoutTerminal.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function cancelCheckout() {
+            document.getElementById('checkoutTerminal').style.display = 'none';
+        }
+
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const userEmail = document.getElementById('userEmail').value;
+            const subject = document.getElementById('emailSubject').value;
+            const message = document.getElementById('emailMessage').value;
+            
+            
+            const mailtoLink = `mailto:aaronvelezcoronado@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + userEmail + '\n\n' + message)}`;
+            
+            
+            window.location.href = mailtoLink;
+            
+            
+            alert('Opening your email client... Your cart will be cleared after you send!');
+            
+            
+            cart = [];
+            updateCartDisplay();
+            document.getElementById('emailForm').reset();
+            document.getElementById('checkoutTerminal').style.display = 'none';
+        }
+
+        function pressEnterAfterInput(event) {
+            if (event.key === 'Enter') {
+                const commandInput = document.getElementById('commandInput');
+                if (commandInput.value.toLowerCase() === 'hello') {
+                    const newTerminal = document.createElement('div');
+                    newTerminal.classList.add('terminal');
+                    newTerminal.innerHTML = `
+                        <div class="terminal-header">
+                            <div class="terminal-button close"></div>
+                            <div class="terminal-button minimize"></div>
+                            <div class="terminal-button maximize"></div>
+                            <div class="terminal-title">terminal@easteregg:~</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="command-line">
+                                <span class="prompt">$</span>
+                                <span class="command">Console.log(message.secret)</span>
+                            </div>
+                            <div class="output">
+                                <div class="section-title">Secret Message</div>
+                                <p>Go Seahawks!</p>
+                                <button class="button" id="partyModeBtn">Party Mode</button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(newTerminal);
+                    
+                    
+                    const partyModeBtn = newTerminal.querySelector('#partyModeBtn');
+                    if (partyModeBtn) {
+                        partyModeBtn.addEventListener('click', partyMode);
+                    }
+                } else {
+                    console.log(commandInput.value);
+                }
+            }
+        }
+
+        function partyMode() {
+            const body = document.body;
+            body.style.backgroundColor = 'red';
+            body.style.color = 'green';
+            body.style.fontFamily = 'Comic Sans MS, cursive, sans-serif';
+            body.style.fontSize = '20px';
+            body.style.fontWeight = 'bold';
+            body.style.textAlign = 'center';
+            body.style.padding = '20px';
+            body.style.margin = '20px';
+            body.style.border = '1px solid green';
+        }
     </script>
 </body>
 </html>

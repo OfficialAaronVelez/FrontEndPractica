@@ -23,16 +23,17 @@ body {
 .button {
     margin-top: 10px;
     background: #00ff00;
-    color: #ffffff;
+    color: #0d1117;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: large;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
 }
 .button:hover {
     background: #00cc00;
-    color: #ffffff;
 }
 .commandInput {
     background: transparent;
@@ -226,4 +227,97 @@ body {
     .command {
         font-size: 14px;
     }
+}
+
+
+.email-shop-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.email-item {
+    background: #1f2328;
+    padding: 15px;
+    border-left: 3px solid #00ff00;
+    border-radius: 4px;
+}
+
+.email-item-title {
+    color: #58a6ff;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.email-item-desc {
+    color: #c9d1d9;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    background: #00ff00;
+    color: #0d1117;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.add-to-cart-btn:hover {
+    background: #00cc00;
+}
+
+
+.cart-item {
+    background: #1f2328;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 3px solid #f0883e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.remove-btn {
+    background: #ff5f56;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.remove-btn:hover {
+    background: #ff3d33;
+}
+
+
+.email-input, .email-textarea {
+    width: 100%;
+    background: #1f2328;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.email-input:focus, .email-textarea:focus {
+    border-color: #00ff00;
+}
+
+.email-textarea {
+    resize: vertical;
+    min-height: 150px;
 }
